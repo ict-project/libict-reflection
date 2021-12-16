@@ -37,6 +37,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define _REFLECT_TYPES_HEADER
 //============================================
 #include <cstdint>
+#include <cstddef>
 //============================================
 namespace ict { namespace  reflect { namespace  type { 
 //===========================================
