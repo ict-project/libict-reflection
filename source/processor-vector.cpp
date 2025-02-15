@@ -1,4 +1,10 @@
-Copyright (c) 2012-2025, ICT-Project Mariusz Ornowski (ict-project.pl)
+//! @file
+//! @brief Vector context module - Source file.
+//! @author Mariusz Ornowski (mariusz.ornowski@ict-project.pl)
+//! @date 2012-2022
+//! @copyright ICT-Project Mariusz Ornowski (ict-project.pl)
+/* **************************************************************
+Copyright (c) 2012-2022, ICT-Project Mariusz Ornowski (ict-project.pl)
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
@@ -25,3 +31,19 @@ DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
 THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+**************************************************************/
+//============================================
+#include "processor-vector.hpp"
+#include <sstream>
+//============================================
+namespace ict { namespace  reflect {  namespace context { 
+//============================================
+
+//===========================================
+} } }
+//===========================================
+#ifdef ENABLE_TESTING
+#include "test.hpp"
+
+#endif
+//===========================================

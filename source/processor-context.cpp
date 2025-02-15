@@ -1,4 +1,10 @@
-Copyright (c) 2012-2025, ICT-Project Mariusz Ornowski (ict-project.pl)
+//! @file
+//! @brief Generic contex module - Source file.
+//! @author Mariusz Ornowski (mariusz.ornowski@ict-project.pl)
+//! @date 2012-2022
+//! @copyright ICT-Project Mariusz Ornowski (ict-project.pl)
+/* **************************************************************
+Copyright (c) 2012-2022, ICT-Project Mariusz Ornowski (ict-project.pl)
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
@@ -25,3 +31,31 @@ DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
 THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+**************************************************************/
+//============================================
+#include "processor-context.hpp"
+//============================================
+namespace ict { namespace  reflect {  namespace context {
+//============================================
+void Stack::enterElement(const Factory & factory){
+    level++;//Zwiększ poziom.
+    while (stack.size()<level) {//Jeśli przekracza rozmiar stosu.
+        stack.emplace_back(factory.get(options));//Swtórz nowy poziom na stosie.
+    }
+}
+void Stack::leaveElement(){
+    if ((level+1)==stack.size()){//Jeśli wychodzi z najwyższego poziomu stosu
+        if ((s_theEnd|a_theEnd)&(stack.back()->currentControl)){//Jeśli aktualna faza w kontekście jest ostatnią.
+            stack.pop_back();//Zdejmij kontekst ze stosu.
+        }
+    }
+    if (level) level--;//Zmniejsz poziom.
+}
+//============================================
+} } }
+//============================================
+#ifdef ENABLE_TESTING
+#include "test.hpp"
+
+#endif
+//============================================

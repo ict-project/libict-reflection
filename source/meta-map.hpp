@@ -39,6 +39,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include "definition.hpp"
 #include <map>
 #include <mutex>
+#include <string>
 //============================================
 namespace ict { namespace  reflect { namespace  meta { 
 //===========================================
